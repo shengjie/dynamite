@@ -1,0 +1,18 @@
+#!/usr/bin/php
+<?php
+
+require("vendor/autoload.php");
+
+use Symfony\Component\Console\Application;
+use Symfony\Component\Console\Input\InputInterface;
+use Symfony\Component\Console\Input\InputArgument;
+use Symfony\Component\Console\Input\InputOption;
+use Symfony\Component\Console\Output\OutputInterface;
+
+$console = new Application();
+$console->addCommands([
+    new \Shengjie\Dynamite\Command\ModelGeneratorCommand(),
+    new \Shengjie\Dynamite\Command\SF2FullstackProjectGeneratorCommand(),
+    new \Shengjie\Dynamite\Command\SF2NgProjectGeneratorCommand()
+]);
+$console->run();
